@@ -84,6 +84,9 @@ pub fn decide(game_state: GameState) -> Vec<PlayerAction> {
         }
     });
 
+    // log attacks
+    println!("{:?}", attacks);
+
     // return attacks
     return attacks;
 }
