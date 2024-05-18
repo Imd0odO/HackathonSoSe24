@@ -31,7 +31,7 @@ pub fn decide(game_state: GameState) -> Vec<PlayerAction> {
             // calculate the required bits to conquer the opponents base
             let required_bits: u32 = base.required_to_defeat(&opponent, &game_state.config, &game_state.actions);
 
-            println!("{} req for {} [{}]", required_bits, base.distance_to(opponent), opponent.population);
+            println!("{} req for {} ticks (population: {}, target: {})", required_bits, base.distance_to(opponent), base.population, opponent.population);
 
             // check that the base could be conquered with at least 1/4 of the population remaining in base
             if required_bits + 3 < base.population {
