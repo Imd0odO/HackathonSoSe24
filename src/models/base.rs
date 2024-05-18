@@ -41,7 +41,7 @@ impl Base {
         // iterate through all attacks
         attacks.iter().for_each(|attack| {
             // check if the attack will arrive in time
-            if attack.arrival_in_ticks() >= ticks {
+            if attack.arrival_in_ticks() <= ticks {
                 // get the amount of bits in the attack on arrival
                 let val_on_target: i32 = attack.amount_at_target(&config.paths) as i32;
 
