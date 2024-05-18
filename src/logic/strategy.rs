@@ -74,7 +74,7 @@ pub fn decide(game_state: GameState) -> Vec<PlayerAction> {
         }
 
         // check if the max population is at its limit and no attacks were made
-        if consider_upgrade && base.population + game_state.config.base_levels[base.level as usize].spawn_rate  > game_state.config.base_levels[base.level as usize].max_population {
+        if consider_upgrade && base.population + game_state.config.base_levels[base.level as usize].spawn_rate  > game_state.config.base_levels[base.level as usize].max_population && (base.level as usize) < game_state.config.base_levels.len() - 1 {
             // upgrade with all bits over limit
             attacks.push(PlayerAction {
                 src: base.uid,
