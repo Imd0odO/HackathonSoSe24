@@ -32,7 +32,7 @@ pub fn decide(game_state: GameState) -> Vec<PlayerAction> {
             let required_bits: u32 = base.required_to_defeat(&opponent, &game_state.config, &game_state.actions);
 
             // check that the base could be conquered with at least 1/4 of the population remaining in base
-            if required_bits + (game_state.config.base_levels[base.level as usize].max_population / 10) < base.population {
+            if required_bits + 3 < base.population {
                 // check if there is already a target
                 if let Some(target_value) = target {
                     // get if the new target is closer than the old one
@@ -65,7 +65,6 @@ pub fn decide(game_state: GameState) -> Vec<PlayerAction> {
             }
             // consider upgrade
             else {
-                println!("The error is here");
                 consider_upgrade = true;
             }
         }
