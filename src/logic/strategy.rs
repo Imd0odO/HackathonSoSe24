@@ -65,6 +65,7 @@ pub fn decide(game_state: GameState) -> Vec<PlayerAction> {
             }
             // consider upgrade
             else {
+                println!("The error is here");
                 consider_upgrade = true;
             }
         }
